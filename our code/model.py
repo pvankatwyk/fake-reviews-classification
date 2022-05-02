@@ -1,5 +1,6 @@
 import tensorflow as tf
 
+
 class RobertaLayer(tf.keras.layers.Layer):
     def __init__(self, name):
         super(RobertaLayer, self).__init__(name)
@@ -26,7 +27,7 @@ class RobertaLayer(tf.keras.layers.Layer):
         key = self.key(inputs)
         value = self.value(inputs)
         embeddings = self.embeddings(query, key, value)
-        embeddings_out = self.embeddings_out(embeddings_out)
+        embeddings_out = self.embeddings_out(embeddings)
         intermediate = self.intermediate(embeddings)
         output = self.out(intermediate)
         return output
@@ -66,7 +67,7 @@ class RobertaModel(tf.keras.Model):
             tf.keras.layers.Dropout(0.1),
             tf.keras.layers.Dense(2)
         ], name="classifier")
-    
+
     def call(self, x):
         embeddings = self.embeddings(x)
         encoded = self.encoder(embeddings)
