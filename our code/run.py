@@ -39,4 +39,5 @@ train_dataset = tf.data.Dataset.from_tensor_slices((
 model = RobertaModel()
 optimizer = tf.keras.optimizers.Adam(learning_rate=1e-4)
 model.compile(optimizer=optimizer, loss=model.compute_loss, metrics=['accuracy'])
-model.fit(train_dataset.shuffle(1000).batch(TRAIN_BATCH_SIZE), epochs=EPOCHS, batch_size=1)
+# model.compile(optimizer=optimizer, loss=tf.keras.losses.binary_crossentropy, metrics=['accuracy'])
+model.fit(train_dataset.batch(TRAIN_BATCH_SIZE), epochs=EPOCHS, batch_size=1)
