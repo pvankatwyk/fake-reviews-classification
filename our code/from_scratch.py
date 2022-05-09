@@ -28,7 +28,7 @@ y = df['target']
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.33, random_state=42)
 vocab = tokenizer.word_index
 
-
+# Adapted from: https://keras.io/examples/nlp/text_classification_with_transformer/
 class TransformerBlock(tf.keras.layers.Layer):
     def __init__(self, embed_dim, num_heads, ff_dim, rate=0.1):
         super(TransformerBlock, self).__init__()
