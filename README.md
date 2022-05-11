@@ -1,5 +1,7 @@
 # fake-reviews-classification
 
+Contributors: Ricky Zhong, Alice Marbach, Peter Van Katwyk
+
 This repository contains code from the Brown CSCI 1470 project -- Fake Review Classification. Note: most of the code in this repository was run using Google Collab to take advantage of GPU support. For details on the method and results, see the following poster:
 
 
